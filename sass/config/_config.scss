@@ -1,0 +1,14 @@
+:root {
+	@each $type, $shades in $colors {
+		@each $intensity, $color in $shades {
+			--clr-#{$type}-#{$intensity}: #{$color};
+		}
+	}
+
+	@each $value, $weight in $font-weights {
+		--fw-#{$value}: #{$weight};
+	}
+	@each $value, $type in $font-families {
+		--ff-#{$value}: '#{$type}', serif;
+	}
+}
