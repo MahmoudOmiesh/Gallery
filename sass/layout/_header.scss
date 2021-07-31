@@ -1,0 +1,28 @@
+.header {
+	margin-bottom: 3em;
+
+	.container {
+		padding: 3em 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid var(--clr-neutral-200);
+	}
+
+	&__btn {
+		background: none;
+		border: 0;
+		outline: 0;
+		text-transform: uppercase;
+		color: var(--clr-neutral-300);
+		cursor: pointer;
+		font-size: 0.8rem;
+		font-weight: var(--fw-bold);
+		letter-spacing: 2px;
+		transition: color 170ms ease-out;
+
+		&:hover {
+			color: var(--clr-neutral-400);
+		}
+	}
+}
