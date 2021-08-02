@@ -1,10 +1,4 @@
-export async function addGalleryToUi() {
-	const res = await fetch('../data.json');
-	const cards = await res.json();
-	addCards(cards);
-}
-
-function addCards(cards) {
+export function addCards(cards) {
 	const colOne = document.querySelector('.column-1');
 	const colTwo = document.querySelector('.column-2');
 	const colThree = document.querySelector('.column-3');
@@ -12,6 +6,7 @@ function addCards(cards) {
 	cards.forEach((card, idx) => {
 		const cardDiv = document.createElement('div');
 		cardDiv.classList.add('card');
+		cardDiv.dataset.index = idx;
 		cardDiv.innerHTML = `
     <img
       src="${card.images.thumbnail}"
@@ -34,18 +29,4 @@ function addCards(cards) {
 			colFour.appendChild(cardDiv);
 		}
 	});
-}
-
-{
-	/* <div class="card">
-<img
-  src="assets/starry-night/thumbnail.jpg"
-  alt="/"
-  class="card__bg"
-/>
-<div class="card__info">
-  <h1 class="card__name">starry night</h1>
-  <h3 class="card__artist">vincent van gogh</h3>
-</div>
-</div> */
 }

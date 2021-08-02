@@ -1,0 +1,138 @@
+.modal {
+	display: none;
+
+	&-container {
+		display: grid;
+		grid-template-columns: 1fr 0.8fr 1fr;
+		column-gap: 1em;
+		margin-bottom: 10em;
+	}
+
+	&__img-container {
+		@include pseudo(after, '') {
+			background-color: var(--clr-neutral-100);
+			top: 0;
+			right: 0;
+			width: 15%;
+			height: 40%;
+			z-index: 2;
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		bottom: 1.5em;
+		left: 1.5em;
+		border: 0;
+		outline: 0;
+		padding: 1.25em 2em;
+		color: var(--clr-neutral-200);
+		background-color: rgba(0, 0, 0, 0.705);
+		font-weight: var(--fw-bold);
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		letter-spacing: 1.65px;
+		display: inline-flex;
+		align-items: center;
+		gap: 1em;
+		cursor: pointer;
+		transition: background-color 170ms ease-in-out;
+
+		&:hover {
+			background-color: #fff4;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		text-transform: capitalize;
+	}
+
+	&__name {
+		font-size: 3.5rem;
+		line-height: 1.2;
+		margin-bottom: 0.35em;
+	}
+
+	&__artist {
+		color: var(--clr-neutral-300);
+		font-weight: var(--fw-normal);
+		font-size: 0.95rem;
+	}
+
+	&__artist-img {
+		margin: auto 0 0 3em;
+		transform: translateY(50%);
+	}
+
+	&__content {
+		align-self: flex-end;
+		color: var(--clr-neutral-300);
+		position: relative;
+	}
+
+	&__date {
+		position: absolute;
+		top: -10%;
+		right: -10%;
+		font-size: 12rem;
+		line-height: 0;
+		z-index: -2;
+		font-weight: var(--fw-bold);
+		color: var(--clr-neutral-200);
+	}
+
+	&__text {
+		font-size: 0.9rem;
+		font-weight: var(--fw-bold);
+		margin-bottom: 4em;
+		line-height: 1.85;
+		max-width: 33ch;
+	}
+
+	&__link {
+		font-size: 0.7rem;
+		color: inherit;
+		font-weight: var(--fw-bold);
+	}
+}
+
+.progress {
+	margin-bottom: 3em;
+	&__container {
+		width: 100%;
+		height: 2px;
+		background-color: var(--clr-neutral-300);
+		margin-bottom: 2em;
+	}
+
+	&__bar {
+		background-color: var(--clr-neutral-400);
+		height: 100%;
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__name {
+		font-size: 0.85rem;
+		font-weight: var(--fw-bold);
+	}
+
+	&__artist {
+		font-size: 0.6rem;
+		color: var(--clr-neutral-300);
+	}
+
+	&__btn {
+		background: none;
+		border: 0;
+		outline: 0;
+		cursor: pointer;
+	}
+}
