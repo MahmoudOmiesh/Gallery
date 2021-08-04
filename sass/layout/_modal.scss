@@ -4,8 +4,22 @@
 	&-container {
 		display: grid;
 		grid-template-columns: 1fr 0.8fr 1fr;
-		column-gap: 1em;
+		column-gap: 2em;
 		margin-bottom: 10em;
+
+		@include mq(large) {
+			grid-template-columns: 1fr 0.8fr;
+			row-gap: 10em;
+		}
+
+		@include mq(medium) {
+			grid-template-columns: 1fr 0.5fr;
+		}
+
+		@include mq(small) {
+			grid-template-columns: 1fr;
+			row-gap: 3.5em;
+		}
 	}
 
 	&__img-container {
@@ -16,6 +30,14 @@
 			width: 15%;
 			height: 40%;
 			z-index: 2;
+
+			@include mq(small) {
+				width: 45%;
+				height: 10%;
+				top: 90%;
+				bottom: 2em;
+				left: 0;
+			}
 		}
 	}
 
@@ -41,6 +63,13 @@
 		&:hover {
 			background-color: #fff4;
 		}
+
+		@include mq(small) {
+			bottom: initial;
+			left: initial;
+			top: 1.5em;
+			right: 1.5em;
+		}
 	}
 
 	&__info {
@@ -54,23 +83,43 @@
 		font-size: 3.5rem;
 		line-height: 1.2;
 		margin-bottom: 0.35em;
+
+		@include mq(small) {
+			font-size: 2.75rem;
+		}
 	}
 
 	&__artist {
 		color: var(--clr-neutral-300);
 		font-weight: var(--fw-normal);
 		font-size: 0.95rem;
+
+		@include mq(small) {
+			margin-bottom: 1em;
+		}
 	}
 
 	&__artist-img {
 		margin: auto 0 0 3em;
 		transform: translateY(50%);
+
+		@include mq(large) {
+			margin: 0;
+		}
+
+		@include mq(small) {
+			transform: translateY(0);
+		}
 	}
 
 	&__content {
-		align-self: flex-end;
+		align-self: end;
 		color: var(--clr-neutral-300);
 		position: relative;
+
+		@include mq(large) {
+			place-self: center;
+		}
 	}
 
 	&__date {
@@ -82,6 +131,16 @@
 		z-index: -2;
 		font-weight: var(--fw-bold);
 		color: var(--clr-neutral-200);
+
+		@include mq(large) {
+			top: 0;
+		}
+
+		@include mq(small) {
+			font-size: 7rem;
+			top: -10%;
+			right: -8%;
+		}
 	}
 
 	&__text {
@@ -90,6 +149,10 @@
 		margin-bottom: 4em;
 		line-height: 1.85;
 		max-width: 33ch;
+
+		@include mq(medium) {
+			max-width: initial;
+		}
 	}
 
 	&__link {
@@ -134,5 +197,34 @@
 		border: 0;
 		outline: 0;
 		cursor: pointer;
+	}
+}
+
+.image {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: #0009;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 0 2em;
+
+	&__close {
+		margin-bottom: 1em;
+		background: none;
+		text-transform: uppercase;
+		color: var(--clr-neutral-100);
+		border: 0;
+		cursor: pointer;
+		transition: color 170ms ease-in-out;
+
+		&:hover {
+			color: var(--clr-neutral-300);
+		}
 	}
 }

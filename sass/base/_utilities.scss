@@ -1,5 +1,11 @@
 .container {
 	max-width: 85rem;
 	margin-inline: auto;
-	padding: 0 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+
+	@include mq(small) {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
 }

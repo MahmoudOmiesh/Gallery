@@ -13,8 +13,9 @@ $font-weights: (
 );
 
 $breakpoints: (
-	'medium': 65em,
-	'small': 40em,
+	'medium': 768px,
+	'small': 425px,
+	'large': 1024px,
 );
 
 $font-families: (

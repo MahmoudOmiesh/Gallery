@@ -12,6 +12,10 @@ export function showModal(currentCard, currentIdx) {
 	const progressBar = document.querySelector('.progress__bar');
 	const progressName = document.querySelector('.progress__name');
 	const progressArtist = document.querySelector('.progress__artist');
+	const imageBtn = document.querySelector('.modal__btn');
+	const closeBtn = document.querySelector('.image__close');
+	const imageContainer = document.querySelector('.image');
+	const image = document.querySelector('.image__container img');
 	let progressBarWidth = ((currentIdx + 1) / 15) * 100;
 
 	gallery.style.display = 'none';
@@ -26,4 +30,12 @@ export function showModal(currentCard, currentIdx) {
 	modalText.textContent = currentCardData.description;
 	modalLink.href = currentCardData.source;
 	progressBar.style.width = `${progressBarWidth}%`;
+
+	imageBtn.addEventListener('click', () => {
+		imageContainer.style.display = 'flex';
+		image.src = currentCardData.images.gallery;
+	});
+	closeBtn.addEventListener('click', () => {
+		imageContainer.style.display = 'none';
+	});
 }
